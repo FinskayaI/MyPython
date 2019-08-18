@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Список телефонных номеров клиентов</h1>
+<table border="1" width="600">
+    <tr>
+        <td bgcolor="#D4EFDF"><b>No</b></td>
+        <td bgcolor="#D4EFDF"><b>ФИО/Название предприятия</b></td>
+        <td bgcolor="#D4EFDF"><b>Телефон</b></td>
+    </tr>
+
+    {% if message %}
+        <p><strong>{{ message }}</strong></p>
+    {% endif %}
+    {% if alpha_Clients %}
+        <u1>
+            {% for Clients in alpha_Clients %}
+                <tr>
+                    <td bgcolor="#E9F7EF">{{ forloop.counter }}</td>
+                    <td bgcolor="#E9F7EF">{{ Clients.Name }}</td>
+                    <td bgcolor="#E9F7EF">{{Clients.Phone}}</td>
+                </tr>
+            {% endfor %}
+        </u1>
+    {% else %}
+        <p>No Clients are available.</p>
+    {% endif %}
+</table>
+
+</body>
+</html>
